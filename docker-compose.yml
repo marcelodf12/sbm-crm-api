@@ -1,0 +1,30 @@
+version: '2'
+services:
+  sbm-crm-api:
+    image: "marcelodf12/sbm-crm-api-lasted:latest"
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_USER=sbm_crm
+      - DATABASE_PASS=sbm_crm
+      - DATABASE_HOST=mariadb
+      - DATABASE_PORT=3306
+      - SBM_CRM_DB_NAME=sbm_crm
+    networks:
+      - sbm-network
+  mariadb:
+    image: "mariadb:10.6.1"
+    restart: 'always'
+    volumes:
+      - /home/marcelo/docker/volumes/mariadb/:/var/lib/mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: sbm_crm
+      MYSQL_USER: sbm_crm
+      MYSQL_PASSWORD: sbm_crm
+    networks:
+      - sbm-network
+
+networks:
+  sbm-network:
+    driver: bridge
