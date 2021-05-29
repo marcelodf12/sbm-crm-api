@@ -11,7 +11,7 @@ spring:
     show-sql: true
   batch:
     jdbc:
-      table-prefix: SBM_CRM_
+      table-prefix: sbm_crm_
 server:
   servlet:
     contextPath: /sbm-crm-api

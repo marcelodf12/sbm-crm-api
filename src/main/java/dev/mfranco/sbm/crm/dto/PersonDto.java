@@ -1,5 +1,6 @@
 package dev.mfranco.sbm.crm.dto;
 
+import dev.mfranco.sbm.crm.model.Person;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +14,7 @@ public class PersonDto {
     private String firstName;
     private String lastName;
     private String documentChar;
-    private Date birthDate;
+    private String birthDate;
     private String nationality;
     private String typeDocument;
     private Map<String, String> emailList;
